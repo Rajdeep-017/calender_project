@@ -1,20 +1,25 @@
- HEAD
-# calender_project
-=======
-# React + Vite
+# 🗓️ Interactive Wall Calendar Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A polished, high-fidelity React calendar component designed with a physical "wall calendar" aesthetic. Built as a technical challenge to demonstrate complex state management, responsive UI design, and interactive UX.
 
-Currently, two official plugins are available:
+## ✨ Key Features
+- **Physical Aesthetic:** Includes a spiral binding design, hero imagery with dynamic gradients per month, and a serif-heavy "stationary" feel.
+- **Intelligent Range Selection:** Multi-click date range selection with real-time hover previews and duration calculation.
+- **Dual-Context Notes:** A persistent notes system that toggles between "Month-wide" memos and "Selection-specific" notes using a localized key-value store.
+- **Dynamic Theming:** Seamless Light/Dark mode transition that adapts the "paper" and "ink" colors while maintaining the vibrant hero gradients.
+- **State-Driven Animations:** Simulated "page flip" logic that triggers directional CSS transitions when navigating months.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Technical Choices
+- **Vanilla React & CSS Modules:** I chose to avoid heavy UI libraries (like Material UI) to demonstrate the ability to build complex components from scratch with clean, semantic HTML and efficient CSS.
+- **Date Arithmetic:** Implemented manual date calculation logic (`getDaysInMonth`, `getFirstDayOfMonth`) to keep the bundle size small and avoid unnecessary dependencies.
+- **State Management:** Used a unified state approach for range selection and hover effects, ensuring the UI remains performant even when calculating range overlaps in real-time.
+- **Persistence:** The notes system is designed to be easily extensible to a backend or `localStorage` by utilizing a unique `noteKey` pattern (`YYYY-MM-DD`).
 
-## React Compiler
+## 🚀 Getting Started
+1. **Clone the repo:** `git clone <your-repo-link>`
+2. **Install dependencies:** `npm install`
+3. **Run development server:** `npm run dev`
+4. **Build for production:** `npm run build`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
- b1af947 (Initial commit)
+## 📱 Responsiveness
+The component utilizes a Flexbox-based layout that automatically transitions from a side-by-side "Open Book" view on desktop to a stacked "Vertical Wall" view on mobile devices, ensuring the range selection remains accessible on touch screens.
